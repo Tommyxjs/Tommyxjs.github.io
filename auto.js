@@ -157,13 +157,13 @@ function underline_text(el) {
     el.style.textDecorationLine = 'underline'
 }
 
-function show_list(class_name) {
+function show_list(class_name, display_mode='inline') {
     let elements = document.getElementsByClassName(class_name)
     let i = 0
     let sp = elements[i++]
     while (sp) {
         if (sp.style.display === 'none') {
-            sp.style.display = 'inline'
+            sp.style.display = display_mode
         } else {
             sp.style.display = 'none'
         }
