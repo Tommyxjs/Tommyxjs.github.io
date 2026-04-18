@@ -27,13 +27,48 @@ technical work on a non-commercial basis. Copyright and all rights therein are
 maintained by the authors or by other copyright holders, notwithstanding that
 they have offered their works here electronically. It is understood that all
 persons copying this information will adhere to the terms and constraints
-invoked by each author's copyright.<br />
-<br />
-<a href="/">Back to Homepage</a> · <a href="#" class="nav"
-style="text-decoration-line:underline"
-onclick="display_papers('all');underline_text(this);">All Papers</a> · <a
-href="#" class="nav"
-onclick="display_papers('first-author');underline_text(this);">First-Author Papers</a></p>
+invoked by each author's copyright.</p>
+<!-- <br><br> "Back to Homepage":[/]  ·
+<a href="#" class="nav" style="text-decoration-line:underline" onclick="display_papers('all');underline_text(this);">All Papers</a> ·
+<a href="#" class="nav" onclick="display_papers('first-author');underline_text(this);">First-Author Papers</a>  ·
+<a href="#" class="nav" onclick="display_papers('corresponding-author');underline_text(this);">Corresponding-Author Papers</a> -->
+<div id="fieldsets"
+style="display: grid;grid-template-columns: 1fr 1fr;gap: 1.rem;align-items: start;">
+	<fieldset>
+		<legend>Choose the venue's classes:</legend>
+
+		<div><input type="checkbox" id="sec" name="sec" checked="checked"
+		onclick="show_paper_classes(this, 'sec')" /> <label
+		for="sec">Security</label></div>
+
+		<div><input type="checkbox" id="pl" name="pl" checked="checked"
+		onclick="show_paper_classes(this, 'pl')" /> <label for="pl">Programming
+		Language</label></div>
+
+		<div><input type="checkbox" id="se" name="se" checked="checked"
+		onclick="show_paper_classes(this, 'se')" /> <label for="se">Software
+		Engineering</label></div>
+	</fieldset>
+
+	<fieldset>
+		<legend>Choose the author's types:</legend>
+
+		<div><input type="checkbox" id="first-author" name="first-author"
+		checked="checked" onclick="show_paper_classes(this, 'first-author')" /> <label
+		for="first-author">First Author</label></div>
+
+		<div><input type="checkbox" id="corresponding-author"
+		name="corresponding-author" checked="checked"
+		onclick="show_paper_classes(this, 'corresponding-author')" /> <label
+		for="corresponding-author">Corresponding Author</label></div>
+
+		<div><input type="checkbox" id="other-author" name="other-author"
+		checked="checked" onclick="show_paper_classes(this, 'other-author')" /> <label
+		for="other-author">Others</label></div>
+	</fieldset>
+</div>
+
+<p><a href="/">Back to Homepage</a></p>
 
 <hr />
 
@@ -43,7 +78,14 @@ onclick="display_papers('first-author');underline_text(this);">First-Author Pap
 <h2 id="toc-2026">2026</h2>
 
 <ul style="margin-right: 5mm">
-	<li style="margin-bottom: 10px;" type="sec"><a
+	<li style="margin-bottom: 10px;" type="pl,corresponding-author"><a
+	href="https://conferences.i-cav.org/2026/">CAV'26</a>: <a href="#">Sound and
+	Precise Symbolic Automata Model for Stateful Software Systems</a><br />
+	Xinlong Wu, Ruiyu Zhou, Peisen Yao, <strong>Qingkai Shi</strong><br />
+	The International Conference on Computer Aided Verification<br />
+</li>
+
+	<li style="margin-bottom: 10px;" type="sec,other-author"><a
 	href="https://sp2026.ieee-security.org/">SP'26</a>: <a
 	href="https://doi.ieeecomputersociety.org/10.1109/SP63933.2026.00056">SFA-Miner:
 	Mining Path-Sensitive API Usage Patterns via Symbolic Finite Automata</a><br />
@@ -51,7 +93,15 @@ onclick="display_papers('first-author');underline_text(this);">First-Author Pap
 	The IEEE Symposium on Security and Privacy<br />
 </li>
 
-	<li style="margin-bottom: 10px;" type="pl"><a
+	<li style="margin-bottom: 10px;" type="se,other-author"><a
+	href="https://conf.researchr.org/home/fse-2026">FSE'26</a>: <a href="#">NESA:
+	Relational Neuro-Symbolic Static Program Analysis</a><br />
+	Chengpeng Wang, Yifei Gao, Wuqi Zhang, Xuwei Liu, Jinyao Guo, Mingwei Zheng,
+	<strong>Qingkai Shi</strong>, Xiangyu Zhang<br />
+	The ACM Symposium on the Foundations of Software Engineering<br />
+</li>
+
+	<li style="margin-bottom: 10px;" type="pl,other-author"><a
 	href="https://2026.splashcon.org/track/oopsla-2026">OOPSLA'26</a>: <a
 	href="#">Hermes: Making Path-Sensitive Pointer Analysis Scalable for Sparse
 	Value-Flow Analysis</a><br />
@@ -61,7 +111,7 @@ onclick="display_papers('first-author');underline_text(this);">First-Author Pap
 	and Applications<br />
 </li>
 
-	<li style="margin-bottom: 10px;" type="se"><a
+	<li style="margin-bottom: 10px;" type="se,other-author"><a
 	href="https://dl.acm.org/journal/tosem">TOSEM'26</a>: <a
 	href="https://doi.org/10.1145/3786786">Isolating Compiler Faults via Multiple
 	Pairs of Adversarial Compilation Configurations</a><br />
@@ -70,7 +120,7 @@ onclick="display_papers('first-author');underline_text(this);">First-Author Pap
 	The ACM Transactions on Software Engineering and Methodology<br />
 </li>
 
-	<li style="margin-bottom: 10px;" type="se"><a
+	<li style="margin-bottom: 10px;" type="se,other-author"><a
 	href="https://xploreqa.ieee.org/xpl/RecentIssue.jsp?punumber=32">TSE'26</a>: <a
 	href="https://doi.org/10.1109/TSE.2026.3666208">Boosting Compiler Fault
 	Localization: Getting the Best of Both Worlds by Fusing Dynamic and Historical
@@ -84,8 +134,7 @@ onclick="display_papers('first-author');underline_text(this);">First-Author Pap
 <h2 id="toc-2025">2025</h2>
 
 <ul style="margin-right: 5mm">
-	<li style="margin-bottom: 10px;"
-	type="sec,corresponding-author,student-paper"><a
+	<li style="margin-bottom: 10px;" type="se,corresponding-author"><a
 	href="https://conf.researchr.org/home/ase-2025">ASE'25</a>: <a
 	href="/public_pdfs/ASE2025.pdf">Protecting Source Code Privacy When Hunting
 	Memory Bugs</a><br />
@@ -94,8 +143,7 @@ onclick="display_papers('first-author');underline_text(this);">First-Author Pap
 	The ACM/IEEE International Conference on Automated Software Engineering<br />
 </li>
 
-	<li style="margin-bottom: 10px;"
-	type="sec,corresponding-author,student-paper"><a
+	<li style="margin-bottom: 10px;" type="sec,corresponding-author"><a
 	href="https://www.sigsac.org/ccs/CCS2023/">CCS'25</a>: <a
 	href="https://dl.acm.org/doi/pdf/10.1145/3719027.3744826">Validating Interior
 	Gateway Routing Protocols via Equivalent Topology Synthesis</a><br />
@@ -112,7 +160,7 @@ onclick="display_papers('first-author');underline_text(this);">First-Author Pap
 	The ACM/IEEE International Conference on Software Engineering<br />
 </li>
 
-	<li style="margin-bottom: 10px;" type="pl"><a
+	<li style="margin-bottom: 10px;" type="pl,other-author"><a
 	href="https://2025.splashcon.org/track/OOPSLA">OOPSLA'25</a>: <a
 	href="/public_pdfs/OOPSLA25.pdf">An Empirical Study of Bugs in the Rustc
 	Compiler</a><br />
@@ -122,7 +170,7 @@ onclick="display_papers('first-author');underline_text(this);">First-Author Pap
 	and Applications<br />
 </li>
 
-	<li style="margin-bottom: 10px;" type="se"><a
+	<li style="margin-bottom: 10px;" type="se,other-author"><a
 	href="https://conf.researchr.org/home/issta-2025">ISSTA'25</a>: <a
 	href="/public_pdfs/ISSTA25.pdf">Validating Network Protocol Parsers with
 	Traceable RFC Document Interpretation</a><br />
@@ -135,7 +183,7 @@ onclick="display_papers('first-author');underline_text(this);">First-Author Pap
 <h2 id="toc-2024">2024</h2>
 
 <ul style="margin-right: 5mm">
-	<li style="margin-bottom: 10px;" type="pl"><a
+	<li style="margin-bottom: 10px;" type="pl,other-author"><a
 	href="https://2024.splashcon.org/track/splash-2024-oopsla">OOPSLA'24</a>: <a
 	href="/public_pdfs/OOPSLA2024.pdf">ParDiff: Practical Static Differential
 	Analysis of Network Protocol Parsers</a><br />
@@ -158,7 +206,7 @@ onclick="display_papers('first-author');underline_text(this);">First-Author Pap
 	/>
 </li>
 
-	<li style="margin-bottom: 10px;" type="sec"><a
+	<li style="margin-bottom: 10px;" type="sec,other-author"><a
 	href="https://www.ieee-security.org/TC/SP2024">SP'24</a>: <a
 	href="/public_pdfs/SP2024.pdf">Nyx: Detecting Exploitable Front-Running
 	Vulnerabilities in Smart Contracts</a><br />
@@ -179,7 +227,7 @@ onclick="display_papers('first-author');underline_text(this);">First-Author Pap
 	style="height:1em" /> <strong style="color:red">ACM SIGSOFT Distinguished Paper
 	Award</strong></a></li>
 
-	<li style="margin-bottom: 10px;" type="se"><a
+	<li style="margin-bottom: 10px;" type="se,other-author"><a
 	href="https://conf.researchr.org/home/icse-2024">ICSE'24</a>: <a
 	href="/public_pdfs/ICSE24.pdf">A Two-Layer Persistent Summary Design for Taming
 	Third-Party Libraries in Static Bug-Finding Systems</a><br />
@@ -188,7 +236,7 @@ onclick="display_papers('first-author');underline_text(this);">First-Author Pap
 	The ACM/IEEE International Conference on Software Engineering<br />
 </li>
 
-	<li style="margin-bottom: 10px;" type="se"><a
+	<li style="margin-bottom: 10px;" type="se,other-author"><a
 	href="https://2024.issta.org/">ISSTA'24</a>: <a
 	href="/public_pdfs/ISSTA24.pdf">FRIES: Fuzzing Rust Library Interactions via
 	Efficient Ecosystem-Guided Target Generation</a><br />
@@ -206,7 +254,7 @@ onclick="display_papers('first-author');underline_text(this);">First-Author Pap
 	The IEEE Transactions on Software Engineering<br />
 </li>
 
-	<li style="margin-bottom: 10px;" type="se"><a
+	<li style="margin-bottom: 10px;" type="se,other-author"><a
 	href="https://dl.acm.org/journal/tosem">TOSEM'24</a>: <a
 	href="https://dl.acm.org/doi/pdf/10.1145/3647994">Enumerating Valid
 	Non-Alpha-Equivalent Programs for Interpreter Testing</a><br />
@@ -236,7 +284,7 @@ onclick="display_papers('first-author');underline_text(this);">First-Author Pap
 	The USENIX Security Symposium<br />
 </li>
 
-	<li style="margin-bottom: 10px;" type="sec"><a
+	<li style="margin-bottom: 10px;" type="sec,other-author"><a
 	href="https://www.ieee-security.org/TC/SP2023">SP'23</a>: <a
 	href="/public_pdfs/SP23DARM.pdf">D-ARM: Disassembling ARM Binaries by
 	Lightweight Superset Instruction Interpretation and Graph Modeling</a><br />
@@ -245,7 +293,7 @@ onclick="display_papers('first-author');underline_text(this);">First-Author Pap
 	The IEEE Symposium on Security and Privacy<br />
 </li>
 
-	<li style="margin-bottom: 10px;" type="se"><a
+	<li style="margin-bottom: 10px;" type="se,other-author"><a
 	href="https://2023.esec-fse.org/">ESEC/FSE'23</a>: <a
 	href="/public_pdfs/FSE23.pdf">PEM: Representing Binary Program Semantics for
 	Similarity Analysis via A Probabilistic Execution Model</a><br />
@@ -255,7 +303,7 @@ onclick="display_papers('first-author');underline_text(this);">First-Author Pap
 	Foundations of Software Engineering<br />
 </li>
 
-	<li style="margin-bottom: 10px;" type="se"><a
+	<li style="margin-bottom: 10px;" type="se,other-author"><a
 	href="https://conf.researchr.org/home/issta-2023">ISSTA'23</a>: <a
 	href="/public_pdfs/ISSTA23.pdf">Improving Binary Code Similarity Transformer
 	Models by Semantics-driven Instruction Deemphasis</a><br />
@@ -264,7 +312,7 @@ onclick="display_papers('first-author');underline_text(this);">First-Author Pap
 	The ACM SIGSOFT International Symposium on Software Testing and Analysis<br />
 </li>
 
-	<li style="margin-bottom: 10px;" type="sec"><a
+	<li style="margin-bottom: 10px;" type="sec,other-author"><a
 	href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858">TDSC'23</a>:
 	<a href="https://ieeexplore.ieee.org/abstract/document/10149344">Balancing Seed
 	Scheduling via Monte Carlo Planning</a><br />
@@ -273,7 +321,7 @@ onclick="display_papers('first-author');underline_text(this);">First-Author Pap
 	The IEEE Transactions on Dependable and Secure Computing<br />
 </li>
 
-	<li style="margin-bottom: 10px;" type="se"><a
+	<li style="margin-bottom: 10px;" type="se,other-author"><a
 	href="https://dl.acm.org/journal/tosem">TOSEM'23</a>: <a
 	href="/public_pdfs/TOSEM23.pdf">Anchor: Fast and Precise Value-Flow Analysis for
 	Containers via Memory Orientation</a><br />
@@ -295,7 +343,7 @@ onclick="display_papers('first-author');underline_text(this);">First-Author Pap
 	and Applications<br />
 </li>
 
-	<li style="margin-bottom: 10px;" type="pl"><a
+	<li style="margin-bottom: 10px;" type="pl,other-author"><a
 	href="https://2022.splashcon.org/track/splash-2022-oopsla">OOPSLA'22</a>: <a
 	href="/public_pdfs/OOPSLA22Cres.pdf">Complexity-Guided Container Replacement
 	Synthesis</a><br />
@@ -317,7 +365,7 @@ onclick="display_papers('first-author');underline_text(this);">First-Author Pap
 	Foundations of Software Engineering<br />
 </li>
 
-	<li style="margin-bottom: 10px;" type="se"><a
+	<li style="margin-bottom: 10px;" type="se,other-author"><a
 	href="https://conf.researchr.org/home/icse-2022">ICSE'22</a>: <a
 	href="/public_pdfs/ICSE22.pdf">Precise Divide-By-Zero Detection with Affirmative
 	Evidence</a><br />
@@ -360,7 +408,7 @@ onclick="display_papers('first-author');underline_text(this);">First-Author Pap
 	and Applications<br />
 </li>
 
-	<li style="margin-bottom: 10px;" type="se"><a
+	<li style="margin-bottom: 10px;" type="se,other-author"><a
 	href="https://2021.esec-fse.org/">ESEC/FSE'21</a>: <a
 	href="/public_pdfs/FSE21.pdf">Skeletal Approximation Enumeration for SMT Solver
 	Testing</a><br />
@@ -370,7 +418,7 @@ onclick="display_papers('first-author');underline_text(this);">First-Author Pap
 	Foundations of Software Engineering<br />
 </li>
 
-	<li style="margin-bottom: 10px;" type="se"><a
+	<li style="margin-bottom: 10px;" type="se,other-author"><a
 	href="https://conf.researchr.org/home/issta-2021">ISSTA'21</a>: <a
 	href="/public_pdfs/ISSTA2021.pdf">Fuzzing SMT Solvers via Two-Dimensional Input
 	Space Exploration</a><br />
@@ -415,7 +463,7 @@ onclick="display_papers('first-author');underline_text(this);">First-Author Pap
 	The ACM SIGSOFT International Symposium on Software Testing and Analysis<br />
 </li>
 
-	<li style="margin-bottom: 10px;" type="se"><a
+	<li style="margin-bottom: 10px;" type="se,other-author"><a
 	href="https://conf.researchr.org/home/issta-2020">ISSTA'20</a>: <a
 	href="/public_pdfs/ISSTA20-VeriBuild.pdf">Escaping Dependency Hell: Finding
 	Build Dependency Errors with the Unified Dependency Graph</a><br />
@@ -433,7 +481,7 @@ onclick="display_papers('first-author');underline_text(this);">First-Author Pap
 	The ACM SIGSOFT International Symposium on Software Testing and Analysis<br />
 </li>
 
-	<li style="margin-bottom: 10px;" type="se"><a
+	<li style="margin-bottom: 10px;" type="se,other-author"><a
 	href="https://conf.researchr.org/home/issta-2020">ISSTA'20</a>: <a
 	href="/public_pdfs/ISSTA20-CCD.pdf">Functional Code Clone Detection with Syntax
 	and Semantics Fusion Learning</a><br />
@@ -446,7 +494,7 @@ onclick="display_papers('first-author');underline_text(this);">First-Author Pap
 <h2 id="toc-before-2019">Before 2019</h2>
 
 <ul style="margin-right: 5mm">
-	<li style="margin-bottom: 10px;" type="se"><a
+	<li style="margin-bottom: 10px;" type="se,other-author"><a
 	href="https://conf.researchr.org/home/icse-2019">ICSE'19</a>: <a
 	href="/public_pdfs/ICSE2019.pdf">Smoke: Scalable Path-Sensitive Memory Leak
 	Detection for Millions of Lines of Code</a><br />
@@ -490,7 +538,7 @@ onclick="display_papers('first-author');underline_text(this);">First-Author Pap
     </div></div>
     <div id="footer-container">
         <div id="footer">
-             Copyright 2026 Qingkai Shi. Last modified: 2026.02. <br>
+             Copyright 2026 Qingkai Shi. Last modified: 2026.04. <br>
 			 <div id="edit">
              <a href="./?edit=Publications">Edit page</a> |
              <a href="./cv.php" target="_blank">Edit resume</a> |

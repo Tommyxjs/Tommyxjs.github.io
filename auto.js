@@ -63,6 +63,11 @@ function complete_load() {
             var tag = tags[i];
             tag.style.display = 'none'
         }
+
+        let fieldsets = document.getElementById('fieldsets');
+        if (fieldsets) {
+            fieldsets.style.gridTemplateColumns = '1fr'
+        }
     }
     let domain = document.domain;
     let footer = document.getElementById('footer');
@@ -82,13 +87,16 @@ function complete_load() {
 
     let main_div = document.getElementById('main')
     let sidebar_div = document.getElementById('sidebar')
-    let main_div_height = main_div.clientHeight
-    let sidebar_div_height = sidebar_div.clientHeight
-    if (main_div_height > sidebar_div_height) {
+    if (main_div && sidebar_div) {
+      let main_div_height = main_div.clientHeight
+      let sidebar_div_height = sidebar_div.clientHeight
+      if (main_div_height > sidebar_div_height) {
         sidebar_div.style.height = ""+main_div_height+"px"
-    } else {
+      } else {
         main_div.style.height = ""+sidebar_div_height+"px"
+      }
     }
+   
 }
 
 function share(array1, array2) {
@@ -169,4 +177,44 @@ function show_list(class_name, display_mode='inline') {
         }
         sp = elements[i++]
     }
+}
+
+
+var display_type_set = new Set(["se", "sec", "pl", "first-author", "corresponding-author", "other-author"])
+
+function show_papers() {
+    var all_papers = document.getElementsByTagName('li')
+    var i = 0
+    var paper = all_papers[i++]
+    while (paper) {
+        var type_str = paper.getAttribute('type')
+        var type_set = type_str.trim().split(",")
+	
+	all_satisfied = true
+        for (let i = 0; i < type_set.length; i++) {
+            if (type_set[i] == "rep") continue
+	    else if (display_type_set.has(type_set[i])) {
+	    } else {
+	       all_satisfied = false
+	       break
+	    }
+        }
+
+
+        if (all_satisfied) {
+            paper.style.display = 'list-item'
+        } else {
+	    paper.style.display = 'none'
+        }
+        paper = all_papers[i++]
+    }
+}
+
+function show_paper_classes(checkbox, venue_class) {
+    if (checkbox.checked) {
+        display_type_set.add(venue_class)
+    } else {
+        display_type_set.delete(venue_class)
+    }
+    show_papers()
 }
